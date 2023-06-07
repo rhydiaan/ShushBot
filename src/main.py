@@ -12,6 +12,10 @@ client = commands.Bot(command_prefix = '~', help_command=None, intents=intents)
 shush_array = ['S','h','u','s','h','Shush']
 
 @client.event
+async def on_ready():
+    print(f'Connected to Discord! uid:{client.user.id}')
+
+@client.event
 async def on_message(message):
     if message.author.id == ID_1:
         message_content = message.content
