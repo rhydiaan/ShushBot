@@ -1,4 +1,4 @@
-from env import TOKEN, BOT_ID, ID
+from env import TOKEN, ID_1, ID_2
 import discord
 from discord.ext import commands
 
@@ -13,11 +13,11 @@ shush_array = ['S','h','u','s','h','Shush']
 
 @client.event
 async def on_message(message):
-    if message.author.id == BOT_ID:
+    if message.author.id == ID_1:
         message_content = message.content
         
         for i in shush_array:
-            await sendDM(ID, i)
+            await sendDM(ID_2, i)
 
 
 async def sendDM(user_id:str, message:str): # Handles sending a dm to a user
