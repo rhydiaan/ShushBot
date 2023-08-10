@@ -9,11 +9,14 @@ intents.message_content = True
 # Instantiate a discord client
 client = commands.Bot(command_prefix = '~', help_command=None, intents=intents)
 
+
+
 shush_array = ['S','h','u','s','h','Shush']
 
 @client.event
 async def on_ready():
     print(f'Connected to Discord! uid:{client.user.id}')
+    await client.change_presence(status=discord.Status.invisible)
 
 @client.event
 async def on_message(message):
